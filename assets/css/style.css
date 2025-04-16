@@ -990,6 +990,92 @@ body {
         display: none;
     }
 
+    .banner-area {
+        width: 100%;
+        overflow: hidden;
+    }
+    
+    .container {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .all-banner-slide {
+        width: 100%;
+    }
+    
+    .single-banner-slide {
+        background-size: cover;
+        background-position: center;
+        min-height: 15rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+        color: #fff;
+        position: relative;
+    }
+    
+    .single-banner-slide::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .single-banner-slide > * {
+        position: relative;
+        z-index: 2;
+        max-width: 37rem;
+    }
+    
+    .single-banner-slide span {
+        font-size: 10px;
+        margin-bottom: 10px;
+        display: block;
+    }
+    
+    .single-banner-slide h2 {
+        font-size: 30px;
+        margin-bottom: 15px;
+    }
+    
+    .single-banner-slide p {
+        font-size: 10px;
+        line-height: 1.5;
+        margin-bottom: 25px;
+    }
+    
+    .single-banner-slide a {
+        display: inline-block;
+        padding: 12px 30px;
+        background: crimson;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .single-banner-slide a:hover {
+        background: #e05512;
+    }
+    
+    .owl-carousel .owl-stage-outer {
+        overflow: visible;
+    }
+    
+    .owl-carousel .owl-item {
+        display: flex;
+        justify-content: center;
+    }
+
     .mobcopyright {
         display: block;
         color: #e70c38;
