@@ -6,7 +6,7 @@ body {
  
  /* Logo */
  .logo {
-     width: 100px;
+     width: 5rem;
  }
  
  .burger .fa-sun{
@@ -40,12 +40,12 @@ body {
         opacity: 1;
     }
     50% {
-        transform: scale(1.1); /* Zoom in */
+        transform: scale(1.1);
         opacity: 1;
     }
     100% {
         transform: scale(1);
-        opacity: 0; /* Fade out */
+        opacity: 0;
     }
 }
 
@@ -112,51 +112,6 @@ body {
 .owl-dots {
 	display: none !important;
 }
-
-/* .welcome {
-    text-align: center;
-    font-size: 2em;
-    color: #ffffff;
-    margin-bottom: 10px;
-    z-index: 2;
-}
-
-.impossible {
-    text-align: center;
-    font-size: 1.2em;
-    color: #ffffff;
-    margin-bottom: 20px;
-    z-index: 2;
-}
-
-.hov {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    z-index: 2;
-}
-
-.hov:hover {
-    background-color: #0056b3;
-}
-  
-  .slide1 {
-    background-image: url('/assets/images/banner.jpg'); 
-  }
-  
-  .slide2 {
-    background-image: url('/assets/images/photorealistic-perspective-wood.jpg'); 
-  }
-  
-  .slide3 {
-    background-image: url('/assets/images/realistic-perspective-wood.jpg'); 
-  } */
-
 
  /* Slider */
  .slider {
@@ -492,7 +447,7 @@ body {
    position: fixed;
    bottom: 20px;
    right: 20px;
-   width: 40px
+   width: 40px;
    height: 40px;
    background-color: #007bff;
    color: white;
@@ -513,7 +468,7 @@ body {
  }
  
  .bounce {
-   animation: bounce 0.5s cubic-bezier(0.47, 0, 0.74, 0.86); /* Smoother bounce */
+   animation: bounce 0.5s cubic-bezier(0.47, 0, 0.74, 0.86);
  }
  
  @keyframes bounce {
@@ -521,7 +476,7 @@ body {
      transform: translateY(0);
    }
    50% {
-     transform: translateY(-5px); /* Reduced bounce height */
+     transform: translateY(-5px);
    }
  }
  
@@ -602,224 +557,444 @@ body {
      font-weight: 600;
  }
  
- #mobview{
+ .mobview{
      display: none;
  }
  
  
- /* Mobile responsiveness for header */
- 
+ /* Mobile responsiveness */
+
+ @media (max-width: 1242px) {
+
+    header > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .burger {
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+    }
+
+    .burger .fa-sun{
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+    }
+
+    .burger .fa-moon{
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+        border: none;
+        background-color: none;
+    }
+
+    .burger i {
+        display: inline;
+    }
+
+    .slider {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
+        border-radius: 10px;
+        width: 300px;
+        height: 600px;
+        align-items: center;
+        padding: 60px 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        animation-name: zoom;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-delay: 5s;
+    }
+    
+    @keyframes zoom {
+        0%, 100% {
+          background-size: 100%; 
+        }
+        50% {
+          background-size: 120%;
+        }
+      }
+
+    .cta{
+        display: none;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    header > div > nav {
+        display: none;
+    }
+
+    .gridlock {
+        display: none;
+    }
+
+    #mobview{
+        display: block;
+        text-align: center;
+    }
+
+    header > div > nav > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .pix{
+        display: none;
+    }
+
+    .items{
+        display: block;
+    }
+
+    #owlC{
+        display: block;
+    }
+
+    .owl-carousel .item {
+        height: 10rem;
+        background: #037953;
+        padding: 1rem;
+    }
+
+    .owl-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .owl-prev, .owl-next {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 1.5rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .owl-prev:hover, .owl-next:hover {
+        background-color: #0056b3;
+    }
+
+    .owl-dots {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .owl-dots button.owl-dot.active span, 
+    .owl-dots button.owl-dot:hover span {
+      background-color: #FEAE00;
+      border-radius: 50%;
+      height: 5px;
+      width: 5px;
+      position: absolute;
+    }
+
+    .customPreviousBtn{
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        float: left;
+        background: #f15006;
+        color: #fff;
+        padding: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .customNextBtn{
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        float: right;
+        background: #2d9070;
+        color: #fff;
+        padding: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    } */
+
+    .btns{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .contactsection{
+        display: block;
+    }
+    
+    .form-group {
+        display: block;
+    }
+
+    .footer .foot{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .foot {
+        color: white;
+        padding: 20x 0px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-left: 5px;
+    }
+
+    .copyright p {
+        display: none;
+    }
+
+    .mobcopyright {
+        display: block;
+        color: #e70c38;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 22px;
+        font-weight: 600;
+    }}
+
+
+
+
  @media (max-width: 768px) {
-     header > div {
-         display: flex;
-         justify-content: space-between;
-         align-items: center;
-     }
- 
-     .burger {
-         display: block;
-         font-size: 30px;
-         color: crimson;
-         cursor: pointer;
-         align-items: end;
-     }
- 
-     .burger .fa-sun{
-         display: block;
-         font-size: 30px;
-         color: crimson;
-         cursor: pointer;
-         align-items: end;
-     }
- 
-     .burger .fa-moon{
-         display: block;
-         font-size: 30px;
-         color: crimson;
-         cursor: pointer;
-         align-items: end;
-         border: none;
-         background-color: none;
-     }
- 
-     .burger i {
-         display: inline;
-     }
- 
-     .slider {
-         background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
-         border-radius: 10px;
-         width: 300px;
-         height: 600px;
-         align-items: center;
-         padding: 60px 20px;
-         position: relative;
-         display: flex;
-         justify-content: center;
-         text-align: center;
-         align-items: center;
-         animation-name: zoom;
-         animation-duration: 5s;
-         animation-timing-function: ease-in-out;
-         animation-iteration-count: infinite;
-         animation-delay: 5s;
-     }
-     
-     @keyframes zoom {
-         0%, 100% {
-           background-size: 100%; 
-         }
-         50% {
-           background-size: 120%;
-         }
-       }
- 
-     .cta{
-         display: none;
-     }
- 
-     .logo {
-         width: 80px;
-     }
- 
-     header > div > nav {
-         display: none;
-     }
- 
-     .gridlock {
-         display: none;
-     }
- 
-     #mobview{
-         display: block;
-         text-align: center;
-     }
- 
-     header > div > nav > ul {
-         list-style: none;
-         padding: 0;
-         margin: 0;
-         text-align: center;
-     }
- 
-     .pix{
-         display: none;
-     }
- 
-     .items{
-         display: block;
-     }
- 
-     #owlC{
-         display: block;
-     }
- 
-     .owl-carousel .item {
-         height: 10rem;
-         background: #037953;
-         padding: 1rem;
-     }
- 
-     .owl-nav {
-         display: flex;
-         justify-content: center;
-         margin-top: 20px;
-     }
-     
-     .owl-prev, .owl-next {
-         background-color: #007bff;
-         color: white;
-         padding: 10px 20px;
-         margin: 0 10px;
-         border: none;
-         border-radius: 5px;
-         cursor: pointer;
-         transition: background-color 0.3s;
-         font-size: 1.5rem;
-         font-weight: 900;
-         display: flex;
-         align-items: center;
-         justify-content: center;
-     }
-     
-     .owl-prev:hover, .owl-next:hover {
-         background-color: #0056b3;
-     }
- 
-     .owl-dots {
-         text-align: center;
-         margin-bottom: 10px;
-     }
-     .owl-dots button.owl-dot.active span, 
-     .owl-dots button.owl-dot:hover span {
-       background-color: #FEAE00;
-       border-radius: 50%;
-       height: 5px;
-       width: 5px;
-       position: absolute;
-     }
- 
-     .customPreviousBtn{
-         display: block;
-         margin-bottom: 30px;
-         border-radius: 3px;
-         float: left;
-         background: #f15006;
-         color: #fff;
-         padding: 10px;
-         margin-left: 5px;
-         cursor: pointer;
-     }
- 
-     .customNextBtn{
-         display: block;
-         margin-bottom: 30px;
-         border-radius: 3px;
-         float: right;
-         background: #2d9070;
-         color: #fff;
-         padding: 10px;
-         margin-left: 5px;
-         cursor: pointer;
-     } */
- 
-     .btns{
-         display: flex;
-         justify-content: center;
-         gap: 20px;
-         flex-wrap: wrap;
-     }
- 
-     .contactsection{
-         display: block;
-     }
-     
-     .form-group {
-         display: block;
-     }
- 
-     .footer .foot{
-         display: grid;
-         grid-template-columns: 1fr;
-         text-align: left;
-     }
- 
-     .foot {
-         color: white;
-         padding: 20x 0px;
-         grid-template-columns: repeat(4, 1fr);
-         margin-left: 5px;
-     }
- 
-     .copyright p {
-         display: none;
-     }
- 
-     .mobcopyright {
-         display: block;
-         color: #e70c38;
-         text-align: center;
-         padding: 20px 0;
-         font-size: 22px;
-         font-weight: 600;
-     }
+
+    header > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .burger {
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+    }
+
+    .burger .fa-sun{
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+    }
+
+    .burger .fa-moon{
+        display: block;
+        font-size: 30px;
+        color: crimson;
+        cursor: pointer;
+        align-items: end;
+        border: none;
+        background-color: none;
+    }
+
+    .burger i {
+        display: inline;
+    }
+
+    .slider {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banner.jpg');
+        border-radius: 10px;
+        width: 300px;
+        height: 600px;
+        align-items: center;
+        padding: 60px 20px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        animation-name: zoom;
+        animation-duration: 5s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        animation-delay: 5s;
+    }
+    
+    @keyframes zoom {
+        0%, 100% {
+          background-size: 100%; 
+        }
+        50% {
+          background-size: 120%;
+        }
+      }
+
+    .cta{
+        display: none;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    header > div > nav {
+        display: none;
+    }
+
+    .gridlock {
+        display: none;
+    }
+
+    #mobview{
+        display: block;
+        text-align: center;
+    }
+
+    header > div > nav > ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .pix{
+        display: none;
+    }
+
+    .items{
+        display: block;
+    }
+
+    #owlC{
+        display: block;
+    }
+
+    .owl-carousel .item {
+        height: 10rem;
+        background: #037953;
+        padding: 1rem;
+    }
+
+    .owl-nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .owl-prev, .owl-next {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        margin: 0 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 1.5rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .owl-prev:hover, .owl-next:hover {
+        background-color: #0056b3;
+    }
+
+    .owl-dots {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .owl-dots button.owl-dot.active span, 
+    .owl-dots button.owl-dot:hover span {
+      background-color: #FEAE00;
+      border-radius: 50%;
+      height: 5px;
+      width: 5px;
+      position: absolute;
+    }
+
+    .customPreviousBtn{
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        float: left;
+        background: #f15006;
+        color: #fff;
+        padding: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    }
+
+    .customNextBtn{
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 3px;
+        float: right;
+        background: #2d9070;
+        color: #fff;
+        padding: 10px;
+        margin-left: 5px;
+        cursor: pointer;
+    } */
+
+    .btns{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .contactsection{
+        display: block;
+    }
+    
+    .form-group {
+        display: block;
+    }
+
+    .footer .foot{
+        display: grid;
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+
+    .foot {
+        color: white;
+        padding: 20x 0px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-left: 5px;
+    }
+
+    .copyright p {
+        display: none;
+    }
+
+    .mobcopyright {
+        display: block;
+        color: #e70c38;
+        text-align: center;
+        padding: 20px 0;
+        font-size: 22px;
+        font-weight: 600;
+    }}
