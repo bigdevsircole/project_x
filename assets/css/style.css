@@ -973,6 +973,10 @@ body {
         display: block;
     }
 
+    .left p {
+        text-align: justify;
+    }
+
     .footer .foot{
         display: grid;
         grid-template-columns: 1fr;
@@ -1032,7 +1036,7 @@ body {
     .single-banner-slide > * {
         position: relative;
         z-index: 2;
-        max-width: 37rem;
+        max-width: 30rem;
     }
     
     .single-banner-slide span {
