@@ -1002,13 +1002,13 @@ body {
     }
     
     .all-banner-slide {
-        width: 100%;
+        width: auto;
     }
     
     .single-banner-slide {
         background-size: cover;
         background-position: center;
-        min-height: 15rem;
+        max-height: 30rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
