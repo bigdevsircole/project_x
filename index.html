@@ -18,7 +18,7 @@
     <header>
         <div class="maggi">
             <a href="index.html"><img class="logo" src="assets/images/logo.png" alt="Company Logo"></a>
-            <nav>
+            <nav id="primaryNav">
                 <ul>
                     <li><a href="#intro"><i class="fa-solid fa-house"></i> Intro</a></li>
                     <li><a href="#about"><i class="fa-solid fa-briefcase"></i> About</a></li>
@@ -33,11 +33,11 @@
             <div class="burger">
 
                 <a href="#" class="cta">Get Started <i class="fa-solid fa-rocket"></i></a>
-                
+
                 <span>
-                    <i class="fa-solid fa-bars"></i>
-                    <button id="yin" class="punch" onclick="lite()" style="display: none;"><i class="fa-solid fa-sun"></i></button>
-                    <button id="yang" class="punch" onclick="nite()"><i class="fa-solid fa-moon"></i></button>
+                    <button id="navToggle" class="nav-toggle" type="button" aria-label="Toggle navigation menu" aria-controls="primaryNav" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+                    <button id="yin" class="punch" type="button" onclick="lite()" style="display: none;"><i class="fa-solid fa-sun"></i></button>
+                    <button id="yang" class="punch" type="button" onclick="nite()"><i class="fa-solid fa-moon"></i></button>
                 </span>
             </div>
         </div>
@@ -191,7 +191,7 @@
             <div class="left">
                 <h6>For more information:</h6>
                 <h4>We are here for you!</h4>
-                <p>Hotlines: 07035973706 08108112759</p>
+                <p><span>Hotlines:</span> <br> 07035973706 | 08108112759</p>
                 <p>Email: info@ijawdancecontest.ng</p>
                 <p>Audition Location: Nitro Studio, Tamara Hall, Otiotio Road, Yenagoa, Bayelsa State</p>
             </div>
@@ -281,56 +281,41 @@
     <script src="assets/owl-carousel/owl.carousel.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 10,
-                responsive:{
-                    0:{
-                        items:1,
-                    },
-                    600:{
-                        items:1
-                    },
-                    1000:{
-                        items:1
-                    }
-                },
+        $(document).ready(function () {
+            var gallery = $("#owlC .owl-carousel");
+            if (gallery.length) {
+                gallery.owlCarousel({
+                    loop: true,
+                    margin: 10,
                     nav: true,
                     dots: true,
                     autoplay: true,
-                    slideBy: 3,
-                    animateOut: 'slideOutDown',
-                    animateIn: 'flipInX',
-            });
-        });
+                    items: 1
+                });
 
-        $(document).ready(function(){
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-            loop: true,
-            margin: 10,
-            nav: true,
-            items: 1,
-  });
+                $(".customNextBtn").on("click", function () {
+                    gallery.trigger("next.owl.carousel");
+                });
 
-    // Custom Button
-        $('.customNextBtn').click(function() {
-            owl.trigger('next.owl.carousel');
-        });
-        $('.customPreviousBtn').click(function() {
-            owl.trigger('prev.owl.carousel');
-        });
-    });
+                $(".customPreviousBtn").on("click", function () {
+                    gallery.trigger("prev.owl.carousel");
+                });
+            }
 
-    $(".all-banner-slide").owlCarousel({
-	items: 1,
-	smartSpeed: 1000,
-	autoplay: true,
-	lazyLoad: true,
-	dots: false,
-	autoplayTimeout: 3000
-});
-</script>
+            var banner = $(".all-banner-slide");
+            if (banner.length) {
+                banner.owlCarousel({
+                    loop: true,
+                    items: 1,
+                    smartSpeed: 1000,
+                    autoplay: true,
+                    lazyLoad: true,
+                    dots: false,
+                    nav: false,
+                    autoplayTimeout: 3000
+                });
+            }
+        });
+    </script>
 </body>
 </html>
